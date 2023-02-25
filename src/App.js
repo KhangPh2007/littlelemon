@@ -1,11 +1,13 @@
 
 import './App.css';
 import AppBar from './components/AppBar';
+import Footer from './components/Footer';
+import ReservationForm from './components/ReservationFrom';
 
 function App() {
   return (
     <div className="App">
-      <AppBar/>
+      {/* <AppBar/>
       <nav>
         <ul>
           <li>
@@ -22,6 +24,8 @@ function App() {
       <a href="/book" role="button">
         Book a table
       </a>
+      <Footer/> */}
+      <ReservationForm/>
     </div>
   );
 }
