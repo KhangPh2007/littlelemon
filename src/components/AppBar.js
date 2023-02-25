@@ -8,7 +8,7 @@ function AppBar() {
     maxHeight: 300,
     maxWidth: 200,
   };
-  
+
   const isSmallScreen = useMediaQuery("(max-width: 800px)");
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleClick = (event) => {
@@ -26,7 +26,8 @@ function AppBar() {
       justifyContent="center"
       alignItems="center"
       xs={12}
-      sm={8}
+      sm={12}
+      style={{ backgroundColor: "white" }}
     >
       <Grid item xs={2}>
         {isSmallScreen ? (
@@ -38,7 +39,11 @@ function AppBar() {
             <MenuIcon />
           </Button>
         )}
-        <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
           <MenuItem onClick={handleClose}>Home</MenuItem>
           <MenuItem onClick={handleClose}>About</MenuItem>
           <MenuItem onClick={handleClose}>Reservation</MenuItem>
@@ -59,7 +64,9 @@ function AppBar() {
         >
           <Button size="large">Home</Button>
           <Button size="large">About</Button>
-          <Button size="large">Reservation</Button>
+          <Button size="large" style={{ backgroundColor: "yellow" }}>
+            Reservation
+          </Button>
           <Button size="large">Login</Button>
           <Button size="large">Sign Up</Button>
         </Grid>
