@@ -3,29 +3,20 @@ import './App.css';
 import AppBar from './components/AppBar';
 import Footer from './components/Footer';
 import ReservationForm from './components/ReservationFrom';
+import Main from './components/Main';
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      {/* <AppBar/>
-      <nav>
-        <ul>
-          <li>
-            <a href="/home">Homepage</a>
-          </li>
-          <li>
-            <a href="/about">About Us</a>
-          </li>
-          <li>
-            <a href="/blog">Blog</a>
-          </li>
-        </ul>
-      </nav>
-      <a href="/book" role="button">
-        Book a table
-      </a>
-      <Footer/> */}
-      <ReservationForm/>
+      <AppBar />
+      <Main />
+      <ReservationForm />
+      {/* <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/reservations" element={<ReservationForm />} />
+      </Routes> */}
+      <Footer />
     </div>
   );
 }
