@@ -4,20 +4,19 @@ import AppBar from './components/AppBar';
 import Footer from './components/Footer';
 import ReservationForm from './components/ReservationFrom';
 import Main from './components/Main';
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <AppBar />
-      <Main />
-      <ReservationForm />
-      {/* <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/reservations" element={<ReservationForm />} />
-      </Routes> */}
+    
+      <Router>
+        <AppBar/>
+        <Main />
+        <Routes>
+          <Route path="/reservation" element={<ReservationForm />} />    
+        </Routes>
       <Footer />
-    </div>
+      </Router>
   );
 }
 

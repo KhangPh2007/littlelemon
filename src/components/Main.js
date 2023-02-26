@@ -15,6 +15,8 @@ import Dessert3 from "../components/assets/creme.jpg";
 import {Paper, Grid, ButtonBase} from "@mui/material";
 import { styled } from "@mui/material/styles";
 import HeroImage from "../components/assets/gourmet.jpg"
+import { useNavigate } from "react-router-dom";
+
 
 const useStyles = makeStyles({
   root: {
@@ -84,21 +86,32 @@ const menuItems = [
 ];
 
 export default function Main() {
+  const navigate = useNavigate();
+  const handleClick = (page) => {
+     navigate(page);
+    };
+
   const classes = useStyles();
 
   return (
     <div>
-      <Grid container spacing={2} columns={16} >
-        <Grid item xs={8}>
+      <Grid container spacing={2} columns={16} backgroundColor={"#d7ccc8"}>
+        <Grid item xs={10}>
           <h1>Little Lemon</h1>
           <h3>Chicago</h3>
           <p>
             We are a family owned Mediterranean restaurant, focused on
             traditional recipes served with a modern twist.
           </p>
-          <Button>Reserve a Table</Button>
+          <Button
+            size="large"
+            style={{ align: "left", backgroundColor: "yellow" }}
+            onClick={() => navigate("/reservation")}
+          >
+            Reserve a Table
+          </Button>
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={6}>
           <img
             src={HeroImage}
             alt="serving dish"

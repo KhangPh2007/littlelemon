@@ -2,14 +2,20 @@ import * as React from "react";
 import { Button, Grid, useMediaQuery, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import logo from "./assets/logo.jpg";
+import { useNavigate } from "react-router-dom";
+
 
 function AppBar() {
-  const logoStyle = {
-    maxHeight: 300,
-    maxWidth: 200,
-  };
+  const navigate = useNavigate();
 
-  const isSmallScreen = useMediaQuery("(max-width: 800px)");
+    
+    const logoStyle = {
+        maxHeight: 300,
+        maxWidth: 200,
+    };
+    
+    const isSmallScreen = useMediaQuery("(max-width: 800px)");
+    // const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -64,7 +70,11 @@ function AppBar() {
         >
           <Button size="large">Home</Button>
           <Button size="large">About</Button>
-          <Button size="large" style={{ backgroundColor: "yellow" }}>
+          <Button
+            size="large"
+            style={{ backgroundColor: "yellow" }}
+            onClick={() => navigate("/reservation")}
+          >
             Reservation
           </Button>
           <Button size="large">Login</Button>
